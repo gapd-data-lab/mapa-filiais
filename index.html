@@ -8,6 +8,10 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <style>
         #map { height: 600px; width: 100%; }
+        .popup-image {
+            width: 200px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -19,9 +23,16 @@
             maxZoom: 18
         }).addTo(map);
 
-        // Exemplo de marker para São Paulo
+        // Exemplo de marker para São Paulo com imagem e detalhes no popup
+        var popupContent = `
+            <b>Filial São Paulo</b><br />
+            Rua X, São Paulo, SP<br />
+            <img src="https://agropaudalhobr-my.sharepoint.com/:i:/g/personal/governanca_agropaudalho_com_br/EUaf_Jr5MWxEgJvX0p_QsxABHlpV11fnj1dBjKdejvBRsQ?e=BNdk5X" alt="Foto da Filial" class="popup-image"><br />
+            <a href="https://www.sao-paulo-filial.com" target="_blank">Visite nosso site</a>
+        `;
+
         var marker = L.marker([-23.55052, -46.633308]).addTo(map)
-            .bindPopup("<b>Filial São Paulo</b><br />Rua X, São Paulo, SP").openPopup();
+            .bindPopup(popupContent).openPopup();
     </script>
 </body>
 </html>
