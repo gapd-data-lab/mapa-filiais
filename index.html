@@ -18,13 +18,13 @@
     <h1>Mapa Interativo das Filiais</h1>
     <div id="map"></div>
     <script>
-        var map = L.map('map').setView([-21.7310238, -51.7461027], 12); // Zoom ajustado para 12
+        var map = L.map('map').setView([-21.730224626876982, -51.74328652599156], 12); // Zoom ajustado para 12
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 6
         }).addTo(map);
 
-        // Adiciona marker com imagem e link
+        // Adiciona marker com as novas coordenadas, imagem e link
         var popupContent = `
             <b>Filial São Judas</b><br />
             Rua X, São Paulo, SP<br />
@@ -32,7 +32,8 @@
             <a href="https://www.google.com/maps/place/Sao+Judas/@-21.7310238,-51.7461027,836m/data=!3m1!1e3!4m6!3m5!1s0x949169402cff1ac1:0xcfeeee13b358dcbe!8m2!3d-21.7323384!4d-51.7471762!16s%2Fg%2F11c2qkhgb4?authuser=0&entry=ttu&g_ep=EgoyMDI0MTAwNy4xIKXMDSoASAFQAw%3D%3D" target="_blank">Ver no Google Maps</a>
         `;
 
-        var marker = L.marker([-21.7310238, -51.7461027]).addTo(map)
+        // Atualiza as coordenadas do marker
+        var marker = L.marker([-21.73144829594699, -51.7466810101808]).addTo(map)
             .bindPopup(popupContent); // Popup ao clicar no marker
     </script>
 </body>
