@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mapa de Filiais</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        #map { height: 600px; width: 100%; }
+    </style>
+</head>
+<body>
+    <h1>Mapa Interativo das Filiais</h1>
+    <div id="map"></div>
+    <script>
+        var map = L.map('map').setView([-15.7801, -47.9292], 4); // Brasília como ponto central
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18
+        }).addTo(map);
+
+        // Exemplo de marker para São Paulo
+        var marker = L.marker([-23.55052, -46.633308]).addTo(map)
+            .bindPopup("<b>Filial São Paulo</b><br />Rua X, São Paulo, SP").openPopup();
+    </script>
+</body>
+</html>
+
